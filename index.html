@@ -2851,5 +2851,194 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 </script>
+  <script>
+document.addEventListener("DOMContentLoaded", function () {
+  const texts = [
+    {
+      title: "A message to a new friend",
+      level: "A2",
+      text: `
+        <p>Hi Sofia,</p>
+        <p>My name is Daniel, and I am happy to be your new online friend. I am from a small town near Manchester. I live with my parents, my younger sister and our dog, Max. Our house is not very big, but it is warm and comfortable. My favourite room is my bedroom because I can read, listen to music and study there.</p>
+        <p>I am sixteen years old. I like English, history and computer games. At weekends, I usually meet my friends in the park or watch films at home. My best friend is Tom. He is funny and helpful. We often do homework together because he is good at maths, and I am good at writing.</p>
+        <p>I saw your profile and read that you like music and travelling. I like them too. I hope we can write to each other and learn about our countries. Tell me about your family, your home and your hobbies.</p>
+        <p>Best wishes,<br>Daniel</p>
+      `
+    },
+    {
+      title: "Friendship quiz",
+      level: "B1",
+      text: `
+        <p>What kind of friend are you? Read the situations and think about your answers.</p>
+        <p>Your friend has an important exam tomorrow, but she is very nervous. She sends you a message and says she cannot remember anything. A good friend does not laugh or say that the problem is not important. A good friend listens, gives calm advice and reminds her to rest.</p>
+        <p>Another friend invites you to a party, but you already promised to help your brother at home. Some people cancel family plans immediately, but reliable friends are honest. They explain the situation and suggest another time to meet.</p>
+        <p>Your best friend tells you a secret. Later, other classmates ask you about it. A loyal friend does not share private information. Trust is one of the most important parts of friendship.</p>
+        <p>Friendship is not only about having fun together. It is also about respect, honesty and support. Good friends can be different, but they try to understand each other and make each other feel safe.</p>
+      `
+    },
+    {
+      title: "An email from a friend",
+      level: "A2",
+      text: `
+        <p>Hi Alex,</p>
+        <p>How are you? I hope your week is going well. I am writing because we are planning a small family dinner on Saturday evening, and I would like you to come. My cousins are visiting us, and my parents said I can invite one friend.</p>
+        <p>The dinner starts at seven o’clock. You do not need to bring anything, but if you want, you can bring your favourite board game. After dinner, we can watch a film or play games in the living room. My sister wants to make a chocolate cake, so there will be something sweet too.</p>
+        <p>You can come to my house by bus number 12. Get off near the library, and my house is next to the small supermarket. Please write back and tell me if you can come.</p>
+        <p>See you soon,<br>Mark</p>
+      `
+    },
+    {
+      title: "An end of term report",
+      level: "A2",
+      text: `
+        <p>This report describes Anna’s progress this term. Anna is a polite and hardworking student. She comes to class on time, listens carefully and usually completes her homework.</p>
+        <p>In English, Anna has improved her reading skills. She can understand short messages, emails and simple articles. She still needs to practise longer texts because she sometimes misses important details. Her vocabulary is growing, and she uses new words in speaking tasks.</p>
+        <p>In mathematics, Anna works slowly but carefully. She should practise problem-solving exercises at home. Her parents can help by checking that she spends twenty minutes a day on revision.</p>
+        <p>Anna works well with other students and often helps her classmates. Next term, she should speak more confidently in group discussions. Overall, this has been a good term for Anna.</p>
+      `
+    },
+    {
+      title: "Job adverts",
+      level: "A2",
+      text: `
+        <p><b>Part-time shop assistant</b><br>A small bookshop in the city centre needs a friendly shop assistant. The job is for Saturdays and Sundays. You must enjoy talking to customers and helping them find books. Experience is useful, but it is not necessary. Training is provided.</p>
+        <p><b>Receptionist</b><br>A language school is looking for a receptionist. The work is from Monday to Friday, 9 a.m. to 2 p.m. You will answer phone calls, welcome students and organise classroom lists. Good English and computer skills are important.</p>
+        <p><b>Café worker</b><br>A busy café near the university needs a worker for evenings. You will serve drinks, clean tables and help in the kitchen. The manager wants someone reliable, polite and quick. Free lunch is included during long shifts.</p>
+      `
+    },
+    {
+      title: "An invitation to a job interview",
+      level: "A2",
+      text: `
+        <p>Dear Ms Green,</p>
+        <p>Thank you for applying for the position of receptionist at Bright Language School. We are pleased to invite you to an interview on Thursday, 14 May, at 10:30 a.m.</p>
+        <p>The interview will take place at our main office, 25 King Street. Please come to reception when you arrive. The interview will last about thirty minutes. You will meet the school manager and the office coordinator.</p>
+        <p>Please bring a copy of your CV and a form of identification. You do not need to prepare a presentation, but we will ask you about your experience with students and customers.</p>
+        <p>Please reply to this email by Monday to confirm that you can attend.</p>
+        <p>Kind regards,<br>Helen Brown<br>Office Coordinator</p>
+      `
+    },
+    {
+      title: "Holiday home adverts",
+      level: "A2",
+      text: `
+        <p><b>City flat</b><br>This modern flat is in the centre of the city. It has two bedrooms, a small kitchen, a bathroom and a bright living room. There is free Wi-Fi and a balcony with a view of the main street. The flat is close to shops, cafés and museums. It is good for two friends or a small family.</p>
+        <p><b>Country farmhouse</b><br>This quiet farmhouse is outside the town, near green fields and a small river. It has three bedrooms, a large kitchen and a garden. There is no television, but there are many books and board games. It is perfect for people who want fresh air, long walks and a peaceful weekend.</p>
+      `
+    },
+    {
+      title: "A travel guide",
+      level: "B1",
+      text: `
+        <p>York is a small historic city in the north of England. It is popular with visitors because it is easy to explore on foot. The old city walls, narrow streets and traditional shops make York feel different from many modern cities.</p>
+        <p>One of the most famous places to visit is York Minster, a large cathedral with beautiful windows. Visitors who enjoy history can also go to the castle museum or walk around the city walls. These places show how people lived in the past.</p>
+        <p>York is also a good city for free time. There are many cafés, small restaurants and bookshops. The Shambles is a narrow street with old buildings and interesting shops. It is often busy, so mornings are the best time to visit.</p>
+        <p>The train station is close to the centre, and most attractions are within walking distance. A weekend is enough to see the main sights, but many visitors stay longer because the city is calm and friendly.</p>
+      `
+    },
+    {
+      title: "Healthy daily habits",
+      level: "A2",
+      text: `
+        <p>Good health is not only about visiting a doctor. Small daily habits can help people feel better and have more energy. One important habit is sleep. Teenagers and adults need enough sleep to study, work and remember information well.</p>
+        <p>Food is important too. A healthy meal usually includes vegetables, fruit, protein and water. It is not necessary to stop eating all sweet food, but it is better not to eat too much sugar every day.</p>
+        <p>Exercise also helps the body and the mind. People do not have to go to the gym every day. Walking, dancing, cycling or playing a sport with friends can be enough. The most important thing is to move regularly.</p>
+        <p>Healthy habits are easier when they are simple. Start with one small change and repeat it every day.</p>
+      `
+    },
+    {
+      title: "Sport and fitness",
+      level: "B1",
+      text: `
+        <p>Many people want to be fit, but they stop exercising after a few weeks. One reason is that they choose activities that are too difficult or boring. A fitness plan should match a person’s age, free time and interests.</p>
+        <p>Beginners do not need to train for two hours a day. Short regular exercise is often more useful than one very hard workout. For example, a thirty-minute walk five times a week can improve health and mood. Swimming and cycling are also good because they are gentle on the body.</p>
+        <p>Motivation is important. Some people like exercising alone, while others prefer joining a class or playing team sports. Training with a friend can make exercise more enjoyable and help people continue.</p>
+        <p>Fitness is not only about looking strong. It is also about sleeping better, feeling less stressed and having energy for daily life. The best activity is the one a person can continue for a long time.</p>
+      `
+    }
+  ];
+
+  document.querySelectorAll(".original-link, .source-note").forEach(function(el) {
+    el.style.display = "none";
+  });
+
+  document.querySelectorAll(".reading-label").forEach(function(label) {
+    label.textContent = label.textContent
+      .replace("Real Source · ", "")
+      .replace("Real Source", "")
+      .replace("British Council LearnEnglish Teens", "")
+      .replace("British Council LearnEnglish", "")
+      .trim();
+  });
+
+  document.querySelectorAll(".reading-meta .pill").forEach(function(pill) {
+    const t = pill.textContent.toLowerCase();
+    if (t.includes("british council") || t.includes("real source")) {
+      pill.remove();
+    }
+  });
+
+  const boxes = document.querySelectorAll(".reading-placeholder");
+
+  boxes.forEach(function(box, index) {
+    if (!texts[index]) return;
+
+    box.innerHTML = `
+      <div class="reading-text-ready">
+        <div class="reading-text-top">
+          <span>${texts[index].level}</span>
+          <strong>${texts[index].title}</strong>
+        </div>
+        ${texts[index].text}
+      </div>
+    `;
+  });
+
+  const style = document.createElement("style");
+  style.textContent = `
+    .reading-text-ready {
+      padding: 18px;
+      border-radius: 20px;
+      background: rgba(255, 255, 255, 0.92);
+      border: 1px solid rgba(124, 58, 237, 0.16);
+      color: #1f2937;
+      line-height: 1.78;
+      font-size: 15px;
+      font-weight: 600;
+    }
+
+    .reading-text-ready p {
+      margin-bottom: 12px;
+    }
+
+    .reading-text-ready p:last-child {
+      margin-bottom: 0;
+    }
+
+    .reading-text-top {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 14px;
+    }
+
+    .reading-text-top span {
+      padding: 6px 9px;
+      border-radius: 999px;
+      color: #5b21b6;
+      background: rgba(124, 58, 237, 0.1);
+      font-size: 12px;
+      font-weight: 950;
+    }
+
+    .reading-text-top strong {
+      color: #182033;
+      font-size: 16px;
+    }
+  `;
+  document.head.appendChild(style);
+});
+</script>
 </body>
 </html>
