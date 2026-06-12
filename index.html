@@ -2793,5 +2793,63 @@
       });
     });
   </script>
+  <script>
+document.addEventListener("DOMContentLoaded", function () {
+  document.querySelectorAll(".original-link, .source-note").forEach(function(el) {
+    el.style.display = "none";
+  });
+
+  document.querySelectorAll(".reading-label").forEach(function(label) {
+    label.textContent = label.textContent
+      .replace("Real Source · ", "")
+      .replace("Real Source", "")
+      .replace("British Council LearnEnglish Teens", "")
+      .replace("British Council LearnEnglish", "")
+      .trim();
+  });
+
+  document.querySelectorAll(".reading-meta .pill").forEach(function(pill) {
+    const badWords = [
+      "British Council",
+      "British Council LearnEnglish",
+      "British Council LearnEnglish Teens",
+      "Real Source"
+    ];
+
+    badWords.forEach(function(word) {
+      if (pill.textContent.includes(word)) {
+        pill.remove();
+      }
+    });
+  });
+
+  document.querySelectorAll(".reading-placeholder").forEach(function(box) {
+    box.innerHTML = `
+      <div class="lang-content" data-lang="kk">
+        <p>
+          Бұл бөлімде мәтінді мұқият оқып, негізгі ойды, нақты ақпаратты және сөздердің мағынасын түсінуге жаттығасыз.
+        </p>
+        <p>
+          Алдымен мәтіннің тақырыбына назар аударыңыз. Содан кейін сұрақтарды оқып, жауапты мәтіндегі ақпаратқа сүйеніп таңдаңыз.
+        </p>
+      </div>
+
+      <div class="lang-content" data-lang="ru">
+        <p>
+          В этом разделе вы тренируете понимание основной идеи, конкретной информации и значения слов в контексте.
+        </p>
+        <p>
+          Сначала обратите внимание на тему текста. Затем прочитайте вопросы и выбирайте ответ по информации из текста.
+        </p>
+      </div>
+    `;
+  });
+
+  const lang = document.body.classList.contains("lang-ru") ? "ru" : "kk";
+  if (typeof switchLanguage === "function") {
+    switchLanguage(lang);
+  }
+});
+</script>
 </body>
 </html>
