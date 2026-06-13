@@ -3040,5 +3040,187 @@ document.addEventListener("DOMContentLoaded", function () {
   document.head.appendChild(style);
 });
 </script>
+  <script>
+document.addEventListener("DOMContentLoaded", function () {
+  const reading1 = document.querySelector("#reading-1");
+  if (!reading1) return;
+
+  const textBox = reading1.querySelector(".reading-placeholder");
+  const taskCard = reading1.querySelector('[data-test="reading-1-test"]');
+
+  if (textBox) {
+    textBox.innerHTML = `
+      <div class="reading-text-ready">
+        <div class="reading-text-top">
+          <span>B1</span>
+          <strong>The Importance of Friendship</strong>
+        </div>
+
+        <p><b>IELTS Reading Practice – Level B1</b></p>
+        <p><b>Topic:</b> The Importance of Friendship</p>
+
+        <p>
+          Friendship is one of the most valuable relationships in a person's life.
+          A true friend is someone who supports you during difficult times and
+          celebrates with you during happy moments. Unlike family, friends are
+          people we choose. This makes friendship special, because it is based on
+          trust, respect, and shared experiences.
+        </p>
+
+        <p>
+          Many studies show that people with strong friendships tend to be happier
+          and healthier. Good friends can reduce stress, improve self-confidence,
+          and even help you live longer. When you feel sad or lonely, having
+          someone to talk to can make a big difference. In fact, emotional support
+          from friends is as important as physical health.
+        </p>
+
+        <p>
+          However, building and maintaining strong friendships is not always easy.
+          Friends may have different opinions, interests, or life goals.
+          Misunderstandings and arguments can happen. That’s why communication
+          is key. Listening, being honest, and showing empathy can help strengthen
+          any relationship.
+        </p>
+
+        <p>
+          Today, technology also plays a big role in friendship. Social media and
+          messaging apps allow people to stay in touch, even when they live far
+          apart. While online communication is helpful, it cannot fully replace
+          face-to-face time. Spending time together, sharing activities, or simply
+          having a real conversation are all important parts of friendship.
+        </p>
+
+        <p>
+          In short, friendship adds joy and meaning to life. It is not about having
+          many friends, but having a few real ones who truly care.
+        </p>
+      </div>
+    `;
+  }
+
+  if (taskCard) {
+    taskCard.innerHTML = `
+      <h4>Reading 1 · Questions</h4>
+
+      <div class="question" data-answer="b">
+        <p>1.1 Why is friendship special, according to the passage?</p>
+        <div class="options">
+          <label class="option"><input type="radio" name="r1-1" value="a"> A. Because friends live nearby</label>
+          <label class="option"><input type="radio" name="r1-1" value="b"> B. Because we choose our friends</label>
+          <label class="option"><input type="radio" name="r1-1" value="c"> C. Because friends are always happy</label>
+        </div>
+      </div>
+
+      <div class="question" data-answer="c">
+        <p>1.2 What is one benefit of having strong friendships?</p>
+        <div class="options">
+          <label class="option"><input type="radio" name="r1-2" value="a"> A. You never get sick</label>
+          <label class="option"><input type="radio" name="r1-2" value="b"> B. You become rich</label>
+          <label class="option"><input type="radio" name="r1-2" value="c"> C. You feel happier and less stressed</label>
+        </div>
+      </div>
+
+      <div class="question" data-answer="b">
+        <p>1.3 What helps maintain a strong friendship?</p>
+        <div class="options">
+          <label class="option"><input type="radio" name="r1-3" value="a"> A. Arguing often</label>
+          <label class="option"><input type="radio" name="r1-3" value="b"> B. Good communication</label>
+          <label class="option"><input type="radio" name="r1-3" value="c"> C. Talking only online</label>
+        </div>
+      </div>
+
+      <div class="question" data-answer="c">
+        <p>1.4 What is a limitation of online communication in friendship?</p>
+        <div class="options">
+          <label class="option"><input type="radio" name="r1-4" value="a"> A. It helps build trust</label>
+          <label class="option"><input type="radio" name="r1-4" value="b"> B. It replaces face-to-face contact</label>
+          <label class="option"><input type="radio" name="r1-4" value="c"> C. It cannot fully replace in-person time</label>
+        </div>
+      </div>
+
+      <button class="check-btn" type="button" data-check="reading-1-test">
+        <span class="inline-lang" data-lang="kk">Жауаптарды тексеру</span>
+        <span class="inline-lang" data-lang="ru">Проверить ответы</span>
+      </button>
+
+      <div class="result-box" data-result="reading-1-test">
+        <h5>
+          <span class="inline-lang" data-lang="kk">Түсіндірме</span>
+          <span class="inline-lang" data-lang="ru">Объяснение</span>
+        </h5>
+
+        <div class="lang-content" data-lang="kk">
+          <ol>
+            <li><b>B</b> дұрыс: мәтінде friends are people we choose деп жазылған.</li>
+            <li><b>C</b> дұрыс: strong friendships адамдарды happier and healthier етеді, stress азайтады.</li>
+            <li><b>B</b> дұрыс: communication is key деп нақты айтылған.</li>
+            <li><b>C</b> дұрыс: online communication cannot fully replace face-to-face time.</li>
+          </ol>
+        </div>
+
+        <div class="lang-content" data-lang="ru">
+          <ol>
+            <li><b>B</b> правильно: в тексте сказано, что friends are people we choose.</li>
+            <li><b>C</b> правильно: strong friendships помогают feel happier and less stressed.</li>
+            <li><b>B</b> правильно: в тексте прямо сказано communication is key.</li>
+            <li><b>C</b> правильно: online communication cannot fully replace in-person time.</li>
+          </ol>
+        </div>
+      </div>
+    `;
+  }
+
+  const style = document.createElement("style");
+  style.textContent = `
+    .reading-text-ready {
+      padding: 18px;
+      border-radius: 20px;
+      background: rgba(255, 255, 255, 0.92);
+      border: 1px solid rgba(124, 58, 237, 0.16);
+      color: #1f2937;
+      line-height: 1.78;
+      font-size: 15px;
+      font-weight: 600;
+    }
+
+    .reading-text-ready p {
+      margin-bottom: 12px;
+    }
+
+    .reading-text-ready p:last-child {
+      margin-bottom: 0;
+    }
+
+    .reading-text-top {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 14px;
+    }
+
+    .reading-text-top span {
+      padding: 6px 9px;
+      border-radius: 999px;
+      color: #5b21b6;
+      background: rgba(124, 58, 237, 0.1);
+      font-size: 12px;
+      font-weight: 950;
+    }
+
+    .reading-text-top strong {
+      color: #182033;
+      font-size: 16px;
+    }
+  `;
+  document.head.appendChild(style);
+
+  const currentLang = document.body.classList.contains("lang-ru") ? "ru" : "kk";
+  if (typeof switchLanguage === "function") {
+    switchLanguage(currentLang);
+  }
+});
+</script>
 </body>
 </html>
